@@ -21,3 +21,9 @@ export interface Character {
 export interface MainData {
   results:Character[]
 }
+
+
+export interface Film {
+  episode_id:number,
+  title:string
+}

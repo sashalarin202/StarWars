@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { MainData } from 'src/app/interfaces';
+import { Film, MainData } from 'src/app/interfaces';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -14,6 +14,7 @@ export class CharacterListComponent implements OnInit {
   film: string='Was in episode:';
 
 
+
   ngOnInit() {
     this.http.get<MainData>(`${environment.apiURL}/.json`)
       .subscribe(characters => {
@@ -21,10 +22,4 @@ export class CharacterListComponent implements OnInit {
       })
   }
 
-  getFilms(films:string[]){
-    films.map(film=>this.http.get<string>(`${film}`)
-    .subscribe(film => {
-      this.film+=film;
-    }))
-  }
 }

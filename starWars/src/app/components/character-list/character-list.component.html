@@ -1,7 +1,3 @@
 <div *ngFor="let character of characters.results">
-  <details>
-    <summary (click)="getFilms(character.films)">{{character.name}}</summary>
-    <li>{{character.name}}</li>
-    <li>{{film}}</li>
-</details>
+  <app-character-detail [character]="character"></app-character-detail>
 </div>
